@@ -6,8 +6,8 @@ from urllib.parse import quote_plus
 import os
 from .config import settings
 
-pwd = quote_plus(os.getenv("PASSWORD_DB").encode(encoding="utf-8"))
-SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{pwd}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
+# pwd = quote_plus(os.getenv("PASSWORD_DB").encode(encoding="utf-8"))
+SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)# responsible for SQLAlchemy to connect with postgres or DB
 # if we use SQlite DB then we add more parameters like: create_engine(SQ:AL..., connect_args={'check_same_thread':False})
