@@ -9,8 +9,8 @@ from sqlalchemy import func
 
 router = APIRouter(
         prefix='/posts',
-        tags=['posts']
-         )
+        tags=['Posts']
+         )# we add tags for /docs link repr segregating posts, users sections
 
 
 @router.get('/', response_model=List[schemas.PostOut])
