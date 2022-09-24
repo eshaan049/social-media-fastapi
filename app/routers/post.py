@@ -8,12 +8,12 @@ from ..oauth2 import get_current_user
 from sqlalchemy import func
 
 router = APIRouter(
-        prefix='/posts',
+        prefix="/posts",
         tags=['Posts']
          )# we add tags for /docs link repr segregating posts, users sections
 
 
-@router.get('/', response_model=List[schemas.PostOut])
+@router.get("/", response_model=List[schemas.PostOut])
 def get_post_updates(db: Session = Depends(get_db), current_user : dict = Depends(get_current_user), 
                      limit:int = 10, skip:int = 0, search:Optional[str] = ""):
     
