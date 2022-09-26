@@ -25,5 +25,5 @@ app.include_router(auth.router)
 app.include_router(vote.router)
 
 @app.get('/')
-def root():# in flask we use route func both are same tho
+def root():# in flask we use route func, both are same tho
     return {"message": "Hello Amma"}
