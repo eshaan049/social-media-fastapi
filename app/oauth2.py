@@ -9,7 +9,7 @@ from .config import settings
 
 # we need SECRET_KEY, algorithm, HEADER, Expriation time
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')# login candidate only has privilege for token grant
 
 SECRET_KEY = settings.secret_key  # os.getenv("SECRET_KEY")
 ALGORITHM = settings.algorithm

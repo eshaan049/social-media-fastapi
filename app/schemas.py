@@ -33,9 +33,6 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
-    # class Config:
-    #     orm_mode = True
-
 
 class PostResponse(PostBase):  # response part
     id: int
