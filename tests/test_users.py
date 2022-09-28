@@ -1,5 +1,5 @@
 from app import schemas
-from .database import client, session    
+# from .database import client, session    
 from jose import JWTError, jwt
 from app.config import settings
 import pytest
