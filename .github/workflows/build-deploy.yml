@@ -67,23 +67,23 @@ jobs:
       #     cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:buildcache
       #     cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/simplewhale:buildcache,mode=max
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-    environment:
-      name: production
-    # steps:
-    #   - name: deploying stuff
-    #     run: echo "going to deploy!"
-    steps:
-      - name: pulling git repository
-        uses: actions/checkout@v3
-      - name: deploying to Heroku
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action / image name
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: [build]
+  #   environment:
+  #     name: production
+  #   # steps:
+  #   #   - name: deploying stuff
+  #   #     run: echo "going to deploy!"
+  #   steps:
+  #     - name: pulling git repository
+  #       uses: actions/checkout@v3
+  #     - name: deploying to Heroku
+  #     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action / image name
+  #       with:
+  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+  #         heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+  #         heroku_email: ${{secrets.HEROKU_EMAIL}}
 
         # steps to deploy in heroku
         # pull git rep, install heroku CLI, heroku login, add git remote
